@@ -9,8 +9,8 @@ public class WordList {
     public WordList(String word) {
         //Initialize Instance
         this.word = word;
-        words = new String[100];
-        values = new int[100];
+        words = new String[999999];
+        values = new int[999999];
         numWords = 0;
     }
 
@@ -33,5 +33,17 @@ public class WordList {
     }
     public int[] getValues() {
         return values;
+    }
+
+    public String getHighest() {
+        int loc = 0;
+        int val = values[0];
+
+        for(int x = 0; x < numWords; x++) {
+            if(values[x] > val && words[x] != word) {
+                loc = x;
+            }
+        }
+        return words[loc];
     }
 }

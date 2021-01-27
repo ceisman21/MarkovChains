@@ -27,10 +27,20 @@ public class WordTrack {
     }
 
     //Return a weighted list and their words
-    public WordList[] getLists(int x) {
-        return words;
+    public WordList getLists(int x) {
+        return words[x];
     }
     public int getPrecision() {
         return precision;
+    }
+
+    public String getWord() {
+        return word;
+    }
+    public boolean equals(Object o) {
+        if (((WordTrack)(o)).getPrecision() == precision && ((WordTrack)(o)).getWord() == word) {
+            return true;
+        }
+        return false;
     }
 }
